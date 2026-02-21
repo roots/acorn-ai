@@ -1,0 +1,41 @@
+{
+    "name": "roots/acorn-ai",
+    "type": "package",
+    "description": "WordPress Abilities API integration and AI support for Acorn.",
+    "keywords": [
+        "acorn",
+        "wordpress",
+        "ai",
+        "abilities"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Roots",
+            "email": "team@roots.io"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Roots\\AcornAi\\": "src/"
+        }
+    },
+    "require": {
+        "php": "^8.4",
+        "laravel/ai": "^0.2"
+    },
+    "require-dev": {
+        "laravel/pint": "^1.13",
+        "roots/acorn": "dev-main"
+    },
+    "extra": {
+        "acorn": {
+            "providers": [
+                "Roots\\AcornAi\\AcornAiServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    }
+}

@@ -1,0 +1,38 @@
+<?php
+
+namespace {{ namespace }};
+
+use Roots\AcornAi\Abilities\Ability;
+
+class {{ class }} extends Ability
+{
+    /**
+     * The human-readable label for the ability.
+     */
+    public function label(): string
+    {
+        return '{{ class }}';
+    }
+
+    /**
+     * A description of what the ability does.
+     *
+     * This is surfaced to AI agents via the MCP adapter, so write it
+     * as you would a tool description in a system prompt.
+     */
+    public function description(): string
+    {
+        return 'A description of the ability.';
+    }
+
+    /**
+     * Execute the ability with the given input.
+     *
+     * @param  array<string, mixed>  $input
+     * @return mixed
+     */
+    public function execute(array $input): mixed
+    {
+        //
+    }
+}
