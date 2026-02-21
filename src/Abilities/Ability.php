@@ -42,7 +42,7 @@ abstract class Ability
      *
      * @param  array<string, mixed>  $input
      */
-    abstract public function execute(array $input): mixed;
+    abstract public function execute(array $input);
 
     /**
      * Determine whether the current user has permission to execute the ability.
