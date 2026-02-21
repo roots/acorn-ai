@@ -252,7 +252,7 @@ class SummarizePostAbility extends Ability
 
 **What this gives you:**
 
-- **REST API** — any authenticated client can call `POST /wp-json/wp-abilities/v1/abilities/mysite~1summarize-post/run` with `{"post_id": 42}`
+- **REST API** — any authenticated client can call `POST /wp-json/wp-abilities/v1/abilities/mysite/summarize-post/run` with `{"post_id": 42}`
 - **MCP tool** — when the [WordPress MCP Adapter](https://github.com/WordPress/mcp-adapter) is active, the ability is surfaced to connected AI agents automatically
 - **Caching** — summaries are cached for 24 hours so repeated calls don't burn API credits
 - **Container injection** — swap `AnonymousAgent` for a dedicated agent class or any injected service by adding constructor dependencies to the ability
