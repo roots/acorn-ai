@@ -41,7 +41,6 @@ abstract class Ability
      * Execute the ability with the given input.
      *
      * @param  array<string, mixed>  $input
-     * @return mixed
      */
     abstract public function execute(array $input): mixed;
 
@@ -49,8 +48,6 @@ abstract class Ability
      * Determine whether the current user has permission to execute the ability.
      *
      * Return true/false, or a WP_Error to return a specific error message.
-     *
-     * @return bool|\WP_Error
      */
     public function permission(): bool|\WP_Error
     {
