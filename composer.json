@@ -22,7 +22,7 @@
     },
     "require": {
         "php": "^8.4",
-        "laravel/ai": "^0.2"
+        "laravel/ai": "*"
     },
     "require-dev": {
         "laravel/pint": "^1.13",
