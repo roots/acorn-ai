@@ -1,41 +1,55 @@
 {
-    "name": "roots/acorn-ai",
-    "type": "package",
-    "description": "WordPress Abilities API integration and AI support for Acorn.",
-    "keywords": [
-        "acorn",
-        "wordpress",
-        "ai",
-        "abilities"
-    ],
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Roots",
-            "email": "team@roots.io"
-        }
-    ],
-    "autoload": {
-        "psr-4": {
-            "Roots\\AcornAi\\": "src/"
-        }
-    },
-    "require": {
-        "php": "^8.4",
-        "laravel/ai": "*"
-    },
-    "require-dev": {
-        "laravel/pint": "^1.13",
-        "roots/acorn": "dev-main"
-    },
-    "extra": {
-        "acorn": {
-            "providers": [
-                "Roots\\AcornAi\\AcornAiServiceProvider"
-            ]
-        }
-    },
-    "config": {
-        "sort-packages": true
+  "name": "roots/acorn-ai",
+  "type": "package",
+  "description": "WordPress Abilities API integration and AI support for Acorn.",
+  "keywords": [
+    "acorn",
+    "wordpress",
+    "ai",
+    "abilities"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Roots",
+      "email": "team@roots.io"
     }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Roots\\AcornAi\\": "src/"
+    }
+  },
+  "require": {
+    "php": "^8.4",
+    "laravel/ai": "*"
+  },
+  "require-dev": {
+    "laravel/pint": "^1.13",
+    "orchestra/testbench": "^10.9",
+    "pestphp/pest": "^4.4",
+    "roots/acorn": "dev-main"
+  },
+  "extra": {
+    "acorn": {
+      "providers": [
+        "Roots\\AcornAi\\AcornAiServiceProvider"
+      ]
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Tests\\": "tests/"
+    }
+  },
+  "scripts": {
+    "test": "pest",
+    "lint": "pint"
+  },
+  "config": {
+    "sort-packages": true,
+    "allow-plugins": {
+      "pestphp/pest-plugin": true
+    }
+  }
 }
