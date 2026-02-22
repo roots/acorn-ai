@@ -14,10 +14,7 @@ class AcornAiServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        $this->mergeConfigFrom(
-            __DIR__.'/../config/ai-wordpress.php',
-            'ai-wordpress'
-        );
+        $this->mergeConfigFrom(__DIR__.'/../config/ai-wordpress.php', 'ai-wordpress');
     }
 
     /**
@@ -57,16 +54,25 @@ class AcornAiServiceProvider extends ServiceProvider
                 /** @var Ability $ability */
                 $ability = $this->app->make($abilityClass);
 
-                wp_register_ability($ability->name(), array_filter([
-                    'label' => $ability->label(),
-                    'description' => $ability->description(),
-                    'execute_callback' => fn (array $input) => $ability->execute($input),
-                    'permission_callback' => fn () => $ability->permission(),
-                    'category' => $ability->category(),
-                    'input_schema' => $ability->inputSchema() ?: null,
-                    'output_schema' => $ability->outputSchema() ?: null,
-                    'meta' => $ability->meta() ?: null,
-                ], fn ($value) => $value !== null));
+                $mcp = $ability->mcp();
+                $meta = array_filter([
+                    ...$ability->meta(),
+                    ...$mcp->toArray(),
+                ]);
+
+                wp_register_ability($ability->name(), array_filter(
+                    [
+                        'label' => $ability->label(),
+                        'description' => $ability->description(),
+                        'execute_callback' => fn (array $input) => $ability->execute($input),
+                        'permission_callback' => fn () => $ability->permission(),
+                        'category' => $ability->category(),
+                        'input_schema' => $ability->inputSchema() ?: null,
+                        'output_schema' => $ability->outputSchema() ?: null,
+                        'meta' => $meta ?: null,
+                    ],
+                    fn ($value) => $value !== null,
+                ));
             }
         });
     }

@@ -85,10 +85,18 @@ abstract class Ability
     }
 
     /**
-     * Additional metadata for the ability.
+     * The MCP exposure configuration for this ability.
      *
-     * Use ['mcp' => ['public' => true]] to expose this ability via the
+     * Override this method to expose the ability via the
      * WordPress MCP Adapter plugin when it is active.
+     */
+    public function mcp(): Mcp
+    {
+        return Mcp::none();
+    }
+
+    /**
+     * Additional metadata for the ability.
      *
      * @return array<string, mixed>
      */

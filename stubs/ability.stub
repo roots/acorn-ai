@@ -3,6 +3,7 @@
 namespace {{ namespace }};
 
 use Roots\AcornAi\Abilities\Ability;
+use Roots\AcornAi\Abilities\Mcp;
 
 class {{ class }} extends Ability
 {
@@ -34,5 +35,13 @@ class {{ class }} extends Ability
     public function execute(array $input): mixed
     {
         //
+    }
+
+    /**
+     * The MCP exposure configuration for this ability.
+     */
+    public function mcp(): Mcp
+    {
+        return Mcp::none();
     }
 }
