@@ -5,7 +5,15 @@ namespace Roots\AcornAi\Abilities;
 readonly class Mcp
 {
     /**
-     * @param  array<string, mixed>  $annotations
+     * @param  'tool'|'resource'|'prompt'|'none'  $type  The MCP component type.
+     * @param  array{
+     *     readonly?: bool,
+     *     destructive?: bool,
+     *     idempotent?: bool,
+     *     audience?: string,
+     *     lastModified?: string,
+     *     priority?: float,
+     * }  $annotations  MCP behavioral annotations.
      */
     private function __construct(
         public bool $public,
@@ -95,7 +103,21 @@ readonly class Mcp
     /**
      * Convert to the meta array shape expected by wp_register_ability().
      *
-     * @return array<string, mixed>
+     * @return array{}|array{
+     *     mcp: array{
+     *         public: bool,
+     *         type: 'tool'|'resource'|'prompt',
+     *         uri?: string,
+     *     },
+     *     annotations?: array{
+     *         readonly?: bool,
+     *         destructive?: bool,
+     *         idempotent?: bool,
+     *         audience?: string,
+     *         lastModified?: string,
+     *         priority?: float,
+     *     },
+     * }
      */
     public function toArray(): array
     {
