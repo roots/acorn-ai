@@ -31,6 +31,12 @@ OPENAI_API_KEY=sk-...
 ANTHROPIC_API_KEY=sk-ant-...
 ```
 
+### WordPress AI Connectors
+
+API keys configured through `laravel/ai` are automatically passed to WordPress AI provider plugins via environment variables. This means you don't need to enter keys on the WordPress Connectors settings page, and your keys are never stored in `wp_options`.
+
+Supported providers: OpenAI, Anthropic, and Gemini (Google).
+
 ## AI Providers & Agents
 
 `roots/acorn-ai` includes [laravel/ai](https://github.com/laravel/ai) and makes it available inside WordPress via Acorn's container. You get the full `laravel/ai` feature set: agents, tools, embeddings, image generation, audio, transcription, and reranking — all configured through `config/ai.php` (published from `laravel/ai`).
