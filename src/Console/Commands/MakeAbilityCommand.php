@@ -33,7 +33,7 @@ class MakeAbilityCommand extends GeneratorCommand
     /**
      * Get the default namespace for the class.
      */
-    protected function getDefaultNamespace(string $rootNamespace): string
+    protected function getDefaultNamespace($rootNamespace): string
     {
         return $rootNamespace.'\Ai\Abilities';
     }
