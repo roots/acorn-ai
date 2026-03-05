@@ -18,6 +18,29 @@ class AcornAiServiceProvider extends ServiceProvider
             __DIR__.'/../config/ai-wordpress.php',
             'ai-wordpress'
         );
+
+        $this->populateEnvironment();
+    }
+
+    /**
+     * Populate environment variables from AI provider config
+     * so WordPress AI provider plugins can access them.
+     */
+    protected function populateEnvironment(): void
+    {
+        $providers = [
+            'anthropic' => 'ANTHROPIC_API_KEY',
+            'gemini'    => 'GOOGLE_API_KEY',
+            'openai'    => 'OPENAI_API_KEY',
+        ];
+
+        foreach ($providers as $provider => $envVar) {
+            $key = $this->app['config']->get("ai.providers.{$provider}.key");
+
+            if ($key && ! getenv($envVar)) {
+                putenv("{$envVar}={$key}");
+            }
+        }
     }
 
     /**
