@@ -1,6 +1,14 @@
 # Acorn AI
 
+[![Packagist Downloads](https://img.shields.io/packagist/dt/roots/acorn-ai?label=downloads&colorB=2b3072&colorA=525ddc&style=flat-square)](https://packagist.org/packages/roots/acorn-ai)
+[![Follow Roots](https://img.shields.io/badge/follow%20@rootswp-1da1f2?logo=twitter&logoColor=ffffff&message=&style=flat-square)](https://twitter.com/rootswp)
+[![Sponsor Roots](https://img.shields.io/badge/sponsor%20roots-525ddc?logo=github&style=flat-square&logoColor=ffffff&message=)](https://github.com/sponsors/roots)
+
 AI support for [Acorn](https://github.com/roots/acorn) — wraps [laravel/ai](https://github.com/laravel/ai) and adds first-class integration with the [WordPress Abilities API](https://make.wordpress.org/core/2025/07/17/abilities-api/).
+
+## Support us
+
+We're dedicated to pushing modern WordPress development forward through our open source projects, and we need your support to keep building. You can support our work by purchasing [Radicle](https://roots.io/radicle/), our recommended WordPress stack, or by [sponsoring us on GitHub](https://github.com/sponsors/roots). Every contribution directly helps us create better tools for the WordPress ecosystem.
 
 ## Requirements
 
@@ -263,6 +271,12 @@ class SummarizePostAbility extends Ability
 - **Caching** — summaries are cached for 24 hours so repeated calls don't burn API credits
 - **Container injection** — swap `AnonymousAgent` for a dedicated agent class or any injected service by adding constructor dependencies to the ability
 
-## License
+## Community
 
-MIT
+Keep track of development and community news.
+
+- Join us on Discord by [sponsoring us on GitHub](https://github.com/sponsors/roots)
+- Join us on [Roots Discourse](https://discourse.roots.io/)
+- Follow [@rootswp on Twitter](https://twitter.com/rootswp)
+- Follow the [Roots Blog](https://roots.io/blog/)
+- Subscribe to the [Roots Newsletter](https://roots.io/subscribe/)
